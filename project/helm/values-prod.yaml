@@ -1,0 +1,31 @@
+namespace:
+  name: prod
+
+image:
+  name: techtrends
+  repository: nedd29
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 5
+
+resources:
+  request:
+    memory: "128Mi"
+    cpu: "350m"
+  limits:
+    memory: "256Mi"
+    cpu: "500m"
+
+service:
+  port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+containers:
+  containerPort: 3111
+  livenessProbe:
+    path: "/healthz"
+  readinessProbe:
+    path: "/healthz" 
