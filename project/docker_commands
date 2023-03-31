@@ -3,9 +3,11 @@ docker build -t techtrends -f Dockerfile .
 
 ## Docker commands used to run the application
 docker run -d -p 7111:3111 techtrends
+docker run -d -p 7111:3111 nedd29/techtrends:latest
 
 ## Docker commands used to get the application logs
 docker container ls | grep techtrends
+# found running container name 'peaceful_hofstadter' from previous command
 docker container logs peaceful_hofstadter -f
 
 ## Logs from the container running the TechTrends application
