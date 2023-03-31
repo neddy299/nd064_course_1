@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: techtrends
   name: techtrends
@@ -11,17 +10,14 @@ spec:
   selector:
     matchLabels:
       app: techtrends
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: techtrends
     spec:
       containers:
       - image: nedd29/techtrends:latest
         name: techtrends
-        resources: {}
         ports:
         - containerPort: 3111
           protocol: TCP
@@ -39,5 +35,4 @@ spec:
             cpu: "250m"
           limits:
             memory: "128Mi"
-            cpu: "500m"        
-status: {}
+            cpu: "500m"
