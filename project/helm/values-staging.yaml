@@ -27,7 +27,7 @@ containers:
   containerPort: 3111
   livenessProbe:
     path: "/healthz"
-    port: 3112
+    port: 3111
   readinessProbe:
     path: "/healthz"
-    port: 3113
+    port: 3111
